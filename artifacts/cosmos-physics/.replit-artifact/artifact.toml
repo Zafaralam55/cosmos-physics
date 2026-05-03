@@ -1,0 +1,27 @@
+kind = "mobile"
+previewPath = "/"
+title = "Cosmos Physics Academy"
+version = "1.0.0"
+id = "artifacts/cosmos-physics"
+router = "expo-domain"
+
+[[integratedSkills]]
+name = "expo"
+version = "1.0.0"
+
+[[services]]
+ensurePreviewReachable = "/status"
+name = "expo"
+paths = [ "/" ]
+localPort = 23684
+
+[services.development]
+run = "pnpm --filter @workspace/cosmos-physics run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cosmos-physics", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/cosmos-physics", "run", "serve" ]
+
+[services.env]
+PORT = "23684"
+BASE_PATH = "/"
