@@ -1,14 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
- const rawDomain = process.env["EXPO_PUBLIC_DOMAIN"] || "cosmos-physics.onrender.com";
-
-const DOMAIN = rawDomain
-  .replace(/^https?:\/\//, "")
-  .replace(/^https\/\//, "")
-  .trim();
-
-export const API_BASE = `https://${DOMAIN}`;
-
+export const API_BASE = "https://cosmos-physics.onrender.com";
 const TOKEN_KEYS = {
   admin: "@cosmos-token-admin",
   teacher: "@cosmos-token-teacher",
